@@ -1,32 +1,23 @@
-import type { InstructionStep } from '../../content/instructions'
 import EditorStatus, { type CodeStatus } from './EditorStatus'
 import { languageIds, languages, type LanguageId } from './hdl/registry'
-import Select from './Select'
+import Select from '../Select/Select'
+import type { CheckKind } from './useCodeChecks'
 import styles from './EditorToolbar.module.css'
 
 type EditorToolbarProps = {
   status: CodeStatus
-  steps: InstructionStep[]
-  step: number | null
-  onStepChange: (step: number) => void
+  busy: CheckKind | null
+  onLint: () => void
+  onSimulate: () => void
   language: LanguageId
   onLanguageChange: (language: LanguageId) => void
 }
 
-function EditorToolbar({ status, steps, step, onStepChange, language, onLanguageChange }: EditorToolbarProps) {
+function EditorToolbar({ status, busy, onLint, onSimulate, language, onLanguageChange }: EditorToolbarProps) {
   return (
     <div className={styles.toolbar}>
       <div className={styles.group}>
         <EditorStatus status={status} />
-        {steps.length > 0 && step !== null && (
-          <Select
-            className={styles.stepSelect}
-            label="Instruction step you're coding for"
-            value={String(step)}
-            options={steps.map((s) => ({ value: String(s.number), label: `Step ${s.number} · ${s.title}` }))}
-            onChange={(value) => onStepChange(Number(value))}
-          />
-        )}
       </div>
       <div className={styles.group}>
         {languageIds.length > 1 ? (
@@ -39,9 +30,12 @@ function EditorToolbar({ status, steps, step, onStepChange, language, onLanguage
         ) : (
           <span className={styles.meta}>{languages[language].label}</span>
         )}
-        <button className={styles.runButton} type="button">
+        <button className={styles.lintButton} type="button" onClick={onLint} disabled={busy !== null}>
+          {busy === 'lint' ? 'Linting…' : 'Run lint'}
+        </button>
+        <button className={styles.runButton} type="button" onClick={onSimulate} disabled={busy !== null}>
           <span className={styles.playIcon} aria-hidden="true" />
-          Run lint
+          {busy === 'simulate' ? 'Simulating…' : 'Simulate'}
         </button>
       </div>
     </div>

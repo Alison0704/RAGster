@@ -10,7 +10,7 @@ Answer these before coding:
 - What should it do when `load` and `en` are both high?
 - Why do we use a clock edge instead of changing the value continuously?
 
-## Step 1: Write the spec
+## Step 1: Write the spec and define the ports
 
 | Item | Value |
 |---|---|
@@ -21,9 +21,8 @@ Answer these before coding:
 | Direction | `up_down` = 1 counts up, 0 counts down |
 | Overflow | wraps around (15 to 0, 0 to 15) |
 
-## Step 2: Define the ports
 
-Create `counter.v` and declare the module header with these signals:
+Create `top.v` and declare the module header with these signals:
 
 | Signal | Direction | Purpose |
 |---|---|---|
@@ -35,7 +34,7 @@ Create `counter.v` and declare the module header with these signals:
 | `din` | in | value to load |
 | `count` | out | current value |
 
-## Step 3: Write the sequential logic
+## Step 2: Write the sequential logic
 
 Inside one `always @(posedge clk or negedge rst_n)` block, check the conditions in priority order:
 1. If reset is active, set `count` to 0.
@@ -45,20 +44,20 @@ Inside one `always @(posedge clk or negedge rst_n)` block, check the conditions 
 
 *Check yourself:* Why do we use non-blocking assignments (`<=`) here?
 
-## Step 4: Build the testbench skeleton
+## Step 3: Build the testbench skeleton
 
-In the same file `counter.v`, add a second module `counter_tb`. It needs:
+In the same file `top.v`, add a second module `counter_tb`. It needs:
 - A clock generator and a reset sequence.
 - An instance of the counter.
 - A waveform dump: `$dumpfile("dump.vcd"); $dumpvars(0, counter_tb);`
 
-## Step 5: Add a reference model and a check task
+## Step 4: Add a reference model and a check task
 
 - Write a **reference model**: a second register that follows the same rules as the counter, written separately in the testbench.
 - Write a `check` task that counts errors and prints a message when a condition fails.
 - Write a `run(n)` task that waits `n` clock cycles and compares `count` against the model each cycle.
 
-## Step 6: Write the tests
+## Step 5: Write the tests
 
 | # | Test | Expected result |
 |---|---|---|
@@ -74,23 +73,18 @@ In the same file `counter.v`, add a second module `counter_tb`. It needs:
 
 End the testbench by printing `PASS` or `FAIL` with the error count, then call `$finish`.
 
-## Step 7: Run and debug
+## Step 6: Run and debug
 
-```bash
-vvp counter_sim
-gtkwave dump.vcd
-```
+After pressing the `Simulate` btton In GTKWave, add `clk`, `en`, `up_down`, `load`, `din`, and `count` from `counter_tb`.
 
 In the waveform, check that:
 - `count` changes only on rising clock edges (except for reset).
 - The count direction follows `up_down`.
 - `load` overrides `en`.
 
-## Step 8: Conclusion
+## Conclusion
 
 Short answers to these questions:
   1. Why does the counter wrap around without extra code?
   2. What changes if reset is synchronous instead of asynchronous?
   3. How would you add a `max` output that goes high when `count` is 15?
-
----

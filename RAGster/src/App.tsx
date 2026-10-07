@@ -5,6 +5,7 @@ import CodeView from './components/CodeView/CodeView'
 import HowToView from './components/HowToView/HowToView'
 import InstructionsView from './components/InstructionsView/InstructionsView'
 import { useHdlDocument } from './components/CodeView/hdl/useHdlDocument'
+import { useCodeChecks } from './components/CodeView/useCodeChecks'
 import { instructionSteps } from './content/instructions'
 import PageFooter from './components/PageFooter/PageFooter'
 import Panel from './components/Panel/Panel'
@@ -17,6 +18,7 @@ function App() {
   const { code, setCode, language, setLanguage } = useHdlDocument()
   // The instruction step the student says they're working on; later sent with chat questions.
   const [step, setStep] = useState(instructionSteps[0]?.number ?? null)
+  const checks = useCodeChecks()
 
   return (
     <main className={styles.appShell}>
@@ -30,16 +32,14 @@ function App() {
           {activeTab === 'instructions' && <InstructionsView />}
           {activeTab === 'code' && (
             <CodeView
-              steps={instructionSteps}
-              step={step}
-              onStepChange={setStep}
               code={code}
               language={language}
               onCodeChange={setCode}
               onLanguageChange={setLanguage}
+              checks={checks}
             />
           )}
-          {activeTab === 'chat' && <ChatView />}
+          {activeTab === 'chat' && <ChatView steps={instructionSteps} step={step} onStepChange={setStep} />}
         </Panel>
         <PageFooter />
       </section>

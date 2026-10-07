@@ -1,1 +1,15 @@
-# Later for containing the GTKWave application and its dependencies
+services:
+  # Compiles and simulates Verilog from the code workspace, and opens GTKWave on the Mac's XQuartz.
+  # One-time XQuartz setup: see sim/README.md.
+  sim:
+    build: ./sim
+    ports:
+      - "8001:8001"
+    environment:
+      DISPLAY: host.docker.internal:0
+    tmpfs:
+      - /runs:uid=1000,gid=1000
+      - /tmp
+    read_only: true
+    mem_limit: 512m
+    cpus: 1

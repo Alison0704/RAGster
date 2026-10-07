@@ -8,4 +8,8 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  server: {
+    // Lint and simulation run in the sim container (<repo>/sim, started with `docker compose up sim`).
+    proxy: { '/api/sim': 'http://localhost:8001' },
+  },
 })

@@ -19,7 +19,19 @@
 }
 
 .label { border-bottom: 1px solid #172219; }
-.footer { border-top: 1px solid #172219; padding: 8px 9px 8px 14px; }
+.footer { border-top: 1px solid #172219; padding: 8px 9px 8px 14px; gap: 12px; }
+
+.context {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  margin-right: auto;
+}
+
+.context > span { flex: none; }
+
+.stepSelect { max-width: 320px; }
 
 .input {
   display: block;
@@ -50,3 +62,8 @@
 }
 
 .arrow { margin-left: 10px; font-size: 12px; }
+
+@media (max-width: 760px) {
+  .context > span { display: none; }
+  .stepSelect { max-width: 100%; }
+}

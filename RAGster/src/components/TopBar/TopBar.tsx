@@ -1,5 +1,4 @@
 import CircuitMark from '../CircuitMark/CircuitMark'
-import StatusDot from '../StatusDot/StatusDot'
 import styles from './TopBar.module.css'
 
 function TopBar() {
