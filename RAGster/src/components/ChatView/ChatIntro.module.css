@@ -1,0 +1,32 @@
+.intro { max-width: 670px; }
+
+.kicker {
+  color: #72917c;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.title {
+  margin: 16px 0 10px;
+  font-size: clamp(30px, 4vw, 48px);
+  letter-spacing: -0.045em;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.title::after { content: "_"; color: var(--accent); animation: blink 1s step-end infinite; }
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.description {
+  color: #6f7d74;
+  max-width: 610px;
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .title { font-size: 34px; }
+}

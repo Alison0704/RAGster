@@ -1,0 +1,12 @@
+.chatView {
+  height: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: clamp(34px, 6vh, 66px) 28px 35px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 760px) {
+  .chatView { padding: 36px 18px 24px; }
+}

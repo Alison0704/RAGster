@@ -1,0 +1,78 @@
+.step {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #1d2d22;
+  background: #070c08;
+  padding: clamp(16px, 2.6vh, 30px) clamp(18px, 2.4vw, 32px);
+  transition: border-color 180ms ease;
+}
+
+.step:hover { border-color: #2c4433; }
+
+.index {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.title {
+  margin: clamp(8px, 1.4vh, 14px) 0 8px;
+  color: #e4ece6;
+  font-size: clamp(15px, 1.3vw, 19px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.body {
+  margin: 0;
+  max-width: 62ch;
+  color: #859189;
+  font-size: clamp(12.5px, 1vw, 14.5px);
+  line-height: 1.7;
+}
+
+.body strong { color: #c4cfc7; font-weight: 500; }
+
+.body code {
+  padding: 1px 5px;
+  border: 1px solid #1d2d22;
+  background: #0b140e;
+  color: #6ae899;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.note {
+  margin: 12px 0 0;
+  color: #526158;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.action {
+  align-self: flex-start;
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding: 16px 0 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.action span { transition: transform 180ms ease; }
+.action:hover span { transform: translateX(3px); }
+
+/* Short screens: keep all four steps visible without scrolling. */
+@media (max-height: 880px) {
+  .body { line-height: 1.55; }
+  .note { margin-top: 8px; }
+  .action { padding-top: 10px; }
+}

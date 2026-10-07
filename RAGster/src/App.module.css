@@ -1,0 +1,29 @@
+.appShell {
+  /* A definite height lets the panel take exactly the space that's left. */
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 15% 12%, rgba(51, 255, 126, 0.08), transparent 28%),
+    radial-gradient(circle at 86% 88%, rgba(51, 255, 126, 0.055), transparent 25%),
+    #020403;
+  padding: 3vh 3vw 2vh;
+}
+
+.workspace {
+  position: relative;
+  z-index: 1;
+  width: min(1600px, 100%);
+  margin: 0 auto;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 760px) {
+  .appShell { padding: 20px 14px; overflow: auto; }
+}

@@ -1,0 +1,93 @@
+.markdown {
+  max-width: 760px;
+  color: #a3afa7;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.markdown > :first-child { margin-top: 0; }
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  color: #e4ece6;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.markdown h1 { margin: 0 0 18px; font-size: clamp(26px, 3vw, 36px); letter-spacing: -0.04em; }
+.markdown h2 { margin: 36px 0 12px; padding-bottom: 8px; border-bottom: 1px solid #1a261e; font-size: 20px; }
+.markdown h3 { margin: 28px 0 8px; font-size: 16px; }
+.markdown h4 {
+  margin: 24px 0 8px;
+  color: #72917c;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.markdown p { margin: 0 0 14px; }
+.markdown strong { color: #d6ded8; font-weight: 600; }
+
+.markdown a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(61, 255, 131, 0.35); }
+.markdown a:hover { border-bottom-color: var(--accent); }
+
+.markdown ul,
+.markdown ol { margin: 0 0 14px; padding-left: 22px; }
+.markdown li { margin: 4px 0; }
+.markdown li::marker { color: #3c8f58; }
+
+/* GFM task lists */
+.markdown li:has(> input[type="checkbox"]) { list-style: none; margin-left: -22px; }
+.markdown input[type="checkbox"] { accent-color: var(--accent); margin-right: 8px; vertical-align: -1px; }
+
+.markdown code {
+  padding: 1px 5px;
+  border: 1px solid #1d2d22;
+  background: #0b140e;
+  color: #6ae899;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+.markdown pre {
+  margin: 0 0 16px;
+  padding: 16px 18px;
+  overflow-x: auto;
+  border: 1px solid #1d2d22;
+  border-left: 2px solid #2e6d45;
+  background: #060b07;
+  line-height: 1.6;
+}
+
+.markdown pre code { padding: 0; border: 0; background: none; color: #b9c4bc; font-size: 12.5px; }
+
+.markdown blockquote {
+  margin: 0 0 14px;
+  padding: 10px 16px;
+  border-left: 2px solid var(--accent);
+  background: rgba(61, 255, 131, 0.03);
+  color: #8b9b90;
+}
+
+.markdown blockquote > :last-child { margin-bottom: 0; }
+
+.markdown hr { margin: 32px 0; border: 0; border-top: 1px solid #1a261e; }
+
+.markdown table { width: 100%; margin: 0 0 16px; border-collapse: collapse; font-size: 13px; }
+.markdown th,
+.markdown td { padding: 8px 12px; border: 1px solid #1a261e; text-align: left; }
+.markdown th {
+  background: #070c08;
+  color: #72917c;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.markdown img { max-width: 100%; border: 1px solid #1a261e; }

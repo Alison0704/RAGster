@@ -1,0 +1,20 @@
+@startuml FlowDiagram
+title Flow Diagram Example
+
+start
+:Student reads the content of Instructions;
+
+:Student proceeds to code according to the instructions;
+
+if (Code is correct?) then (yes)
+  :Student proceeds to the next sesstion;
+
+else (no)
+    if(Student can fix the code?) then (yes)
+        :Student reviews the instructions and corrects the code;
+    else (no)
+        :Student asks for hints from the neural chatbot;
+    endif
+endif
+
+:Student submits the code for simulation;

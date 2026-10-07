@@ -1,0 +1,13 @@
+.circuitMark {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+}
+
+.circuitMark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

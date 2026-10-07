@@ -1,0 +1,33 @@
+.panel {
+  /* Fills the height left over by the top bar, tabs and footer. */
+  flex: 1;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #26362b;
+  background: rgba(4, 7, 5, 0.94);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.48), inset 0 0 70px rgba(56, 255, 128, 0.018);
+  position: relative;
+}
+
+/* Views scroll inside the panel instead of stretching it to their content height. */
+.panel > * {
+  flex: 1;
+  min-height: 0;
+}
+
+.panel::before,
+.panel::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  z-index: 3;
+}
+
+.panel::before { top: -1px; right: -1px; border-top: 1px solid var(--accent); border-right: 1px solid var(--accent); }
+.panel::after { bottom: -1px; left: -1px; border-bottom: 1px solid var(--accent); border-left: 1px solid var(--accent); }
+
+@media (max-width: 760px) {
+  .panel { flex: none; height: 680px; min-height: 0; }
+}

@@ -1,0 +1,50 @@
+.page {
+  height: 100%;
+  overflow: auto;
+  padding: clamp(30px, 5vh, 52px) 48px 48px;
+}
+
+.empty {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  text-align: center;
+}
+
+.kicker {
+  color: #72917c;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.emptyTitle {
+  margin: 14px 0 8px;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.emptyText {
+  margin: 0;
+  color: #6f7d74;
+  font-size: 13px;
+}
+
+.hint {
+  margin: 28px 0 0;
+  color: #3f4d44;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.04em;
+}
+
+.hint code { color: #526158; }
+
+@media (max-width: 760px) {
+  .page { padding: 28px 18px 32px; }
+}

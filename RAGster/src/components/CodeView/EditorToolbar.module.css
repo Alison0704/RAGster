@@ -1,0 +1,65 @@
+.toolbar {
+  height: 58px;
+  flex: 0 0 58px;
+  padding: 0 18px;
+  border-bottom: 1px solid #1a261e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #849087;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.stepSelect { max-width: 300px; }
+
+.fileChip {
+  border: 1px solid #2e6d45;
+  padding: 4px 5px;
+  color: var(--accent);
+  font-size: 8px;
+}
+
+.unsaved {
+  width: 5px;
+  height: 5px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.meta { color: #526158; }
+
+.runButton {
+  border: 1px solid #36945a;
+  color: var(--accent);
+  background: rgba(61, 255, 131, 0.06);
+  padding: 8px 13px;
+  cursor: pointer;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.runButton:hover { background: rgba(61, 255, 131, 0.12); }
+
+.playIcon {
+  display: inline-block;
+  margin-right: 8px;
+  border-left: 5px solid var(--accent);
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+
+@media (max-width: 760px) {
+  .toolbar { padding: 0 12px; }
+  .meta { display: none; }
+  .group { gap: 8px; }
+  .stepSelect { max-width: 34vw; }
+}

@@ -1,0 +1,12 @@
+.codeView {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.editorBody {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  flex: 1;
+  min-height: 0;
+}

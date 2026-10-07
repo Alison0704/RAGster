@@ -1,0 +1,17 @@
+.message {
+  display: flex;
+  gap: 16px;
+  border-left: 1px solid var(--accent);
+  padding: 9px 14px;
+  margin-bottom: 16px;
+  background: rgba(61, 255, 131, 0.025);
+}
+
+.author {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  padding-top: 4px;
+}
+
+.text { margin: 0; color: #aab6ae; font-size: 12px; }

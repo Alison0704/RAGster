@@ -1,0 +1,28 @@
+.select {
+  appearance: none;
+  min-width: 0;
+  border: 1px solid #25342a;
+  background:
+    linear-gradient(45deg, transparent 50%, var(--accent) 50%) right 13px center / 4px 4px no-repeat,
+    linear-gradient(-45deg, transparent 50%, var(--accent) 50%) right 9px center / 4px 4px no-repeat,
+    transparent;
+  color: #849087;
+  padding: 7px 26px 7px 10px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.select:hover,
+.select:focus-visible {
+  border-color: #36945a;
+  color: #d6ded8;
+  outline: none;
+}
+
+.select option { background: #060b07; color: #b9c4bc; text-transform: none; }
