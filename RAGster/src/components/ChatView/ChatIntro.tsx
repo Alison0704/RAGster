@@ -5,7 +5,7 @@ function ChatIntro() {
     <div className={styles.intro}>
       <h1 className={styles.title}>How can I help you today?</h1>
       <p className={styles.description}>
-        RAGster is a tool that allows you to interact with your own data using natural language. You can ask questions, get summaries, and more. To get started, simply type your message in the chat box below and hit "Transmit". Make sure to select the correct instruction step if applicable.
+        Ask about your code and RAGster replies with hints, not answers. Pick the step you're working on so the hints fit.
       </p>
     </div>
   )

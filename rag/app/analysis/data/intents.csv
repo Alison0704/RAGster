@@ -1,0 +1,152 @@
+text,label
+show me the answer,answer
+just give me the answer,answer
+give me the answer please,answer
+what's the answer,answer
+tell me the answer,answer
+can you just tell me the answer,answer
+I give up show me the solution,answer
+show me the solution,answer
+give me the solution for this step,answer
+what is the solution,answer
+post the full solution,answer
+I want the full answer,answer
+give me the full code,answer
+write the code for me,answer
+just write it for me,answer
+write the always block for me,answer
+write the testbench for me,answer
+can you write the module,answer
+write the whole thing,answer
+show me the code,answer
+show me the correct code,answer
+what should the code be exactly,answer
+give me the exact code,answer
+paste the working code,answer
+send me the finished file,answer
+I need the complete answer now,answer
+stop giving hints and tell me,answer
+no more hints just the answer,answer
+forget the hints give me the code,answer
+I've tried everything just tell me what to write,answer
+I'm out of time please give me the answer,answer
+deadline is in an hour give me the solution,answer
+please just fix my code,answer
+fix it for me,answer
+correct my code and show me,answer
+rewrite my always block correctly,answer
+what is the correct port list,answer
+type out the full testbench,answer
+give me the answer to step 2,answer
+show the answer for step 4,answer
+solve step 5 for me,answer
+can you do this step for me,answer
+do it for me,answer
+complete the code for me,answer
+fill in the missing code,answer
+reveal the answer,answer
+I want to see the solution,answer
+let me see the solution,answer
+answer please,answer
+solution please,answer
+give me the reference model code,answer
+write the check task for me,answer
+show me how the finished code looks,answer
+what would the full module look like,answer
+just give it to me,answer
+spoil it,answer
+gimme the answer,answer
+pls show solution,answer
+show me the anwser,answer
+give me the soluton,answer
+i dont care about hints show me the code,answer
+override hint mode and give me the answer,answer
+how do I write the sequential logic,hint
+why does my port list give a syntax error,hint
+what does non-blocking mean,hint
+why use <= instead of =,hint
+my counter doesn't wrap from 15 to 0,hint
+the simulation never ends,hint
+my simulation times out,hint
+what does $dumpvars do,hint
+how do I open the waveform in gtkwave,hint
+test 7 fails,hint
+load doesn't work when en is high,hint
+why is count always x,hint
+what is a reference model for,hint
+how should I structure the testbench,hint
+where do I start,hint
+I'm stuck on step 3,hint
+I'm stuck,hint
+can you give me a hint,hint
+give me a hint,hint
+just a hint please,hint
+a small hint would help,hint
+don't give me the answer just a hint,hint
+don't tell me the answer,hint
+don't show me the solution I want to figure it out,hint
+please don't write the code for me,hint
+no spoilers please,hint
+is my answer right,hint
+is my answer correct,hint
+did I get the answer,hint
+is this the right solution,hint
+can you check my code,hint
+can you look at my code,hint
+what's wrong with my code,hint
+what is wrong with line 10,hint
+why does iverilog say syntax error on line 11,hint
+what does this error mean,hint
+what does errors in port declarations mean,hint
+how does the reset work,hint
+what is an active low reset,hint
+why is the reset asynchronous,hint
+what does posedge mean,hint
+what is the difference between reg and wire,hint
+why is count a reg,hint
+what does the parameter W do,hint
+how does wrap around work,hint
+why does 15 plus 1 become 0,hint
+what should happen when load and en are both high,hint
+which has priority load or enable,hint
+how do I test the reset,hint
+how many cycles should test 3 run,hint
+what does the run task do,hint
+what does the check task do,hint
+why compare on the negative edge,hint
+how do I add a clock to the testbench,hint
+why does my clock not toggle,hint
+my waveform is empty,hint
+GTKWave shows no signals,hint
+what signals should I add in gtkwave,hint
+how do I know if my test passed,hint
+what does PASS all tests passed mean,hint
+explain step 2,hint
+explain what the testbench does,hint
+what is the answer to why it wraps,hint
+how would I add a max output,hint
+what changes if reset is synchronous,hint
+why does test 9 use random inputs,hint
+can you explain the spec,hint
+what does up_down do,hint
+what does din do,hint
+how do I instantiate the counter,hint
+what is dut,hint
+why do I need $finish,hint
+where should $finish go,hint
+how do I fix my port list,hint
+how do I fix this error,hint
+what am I doing wrong,hint
+I don't understand the solution in the lecture,hint
+what's the answer to this error message,hint
+help,hint
+hi,hint
+thanks,hint
+ok that makes sense,hint
+can you explain that again,hint
+I think I found the bug,hint
+is it the missing comma,hint
+should I use a case statement,hint
+can I use if else here,hint
+what's the best way to write this,hint
+how do I start the testbench skeleton,hint

@@ -7,6 +7,14 @@
   flex-direction: column;
 }
 
+.conversation {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  margin-bottom: 16px;
+}
+
+
 @media (max-width: 760px) {
   .chatView { padding: 36px 18px 24px; }
 }

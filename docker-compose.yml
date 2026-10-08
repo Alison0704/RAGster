@@ -13,3 +13,20 @@ services:
     read_only: true
     mem_limit: 512m
     cpus: 1
+
+  # Answers Neural chat questions with hints from the lab material. See rag/README.md.
+  rag:
+    build: ./rag
+    ports:
+      - "8002:8002"
+    environment:
+      RAG_LAB: counter
+      RAG_USE_LLM: "1"            # "0" shows the [RAG scaffold] placeholder instead of calling the model
+      RAG_MODEL: qwen2.5-coder:3b # any model from `ollama list`; 7b is better but too slow on 8 GB
+      OLLAMA_HOST: http://host.docker.internal:11434  # Ollama running natively on the Mac
+    volumes:
+      - ./rag/corpus:/corpus:ro
+      - ./RAGster/instructions:/instructions:ro
+    read_only: true
+    tmpfs:
+      - /tmp

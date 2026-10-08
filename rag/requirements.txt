@@ -1,0 +1,7 @@
+fastapi==0.115.*
+uvicorn==0.32.*
+ollama
+scikit-learn==1.*  # stage 4 intent classifier
+# tests
+pytest==8.*
+httpx  # timeouts for the Ollama client; also used by FastAPI's TestClient

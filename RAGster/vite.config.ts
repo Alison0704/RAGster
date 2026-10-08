@@ -9,7 +9,11 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] })
   ],
   server: {
-    // Lint and simulation run in the sim container (<repo>/sim, started with `docker compose up sim`).
-    proxy: { '/api/sim': 'http://localhost:8001' },
+    proxy: {
+      // Lint and simulation: the sim container (<repo>/sim).
+      '/api/sim': 'http://localhost:8001',
+      // Neural chat: the RAG service (<repo>/rag).
+      '/api/chat': 'http://localhost:8002',
+    },
   },
 })

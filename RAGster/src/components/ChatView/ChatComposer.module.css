@@ -61,6 +61,8 @@
   font-weight: 600;
 }
 
+.send:disabled { opacity: 0.6; cursor: progress; }
+
 .arrow { margin-left: 10px; font-size: 12px; }
 
 @media (max-width: 760px) {

@@ -195,7 +195,7 @@ This is important for test 9 in Step 5
     @(negedge clk);
     rst_n = 1;
 ```
-###  Step 5.8: Test 9: random inputs
+###  Step 5.9: Test 9: random inputs
 ```verilog
 // Test 9: random inputs
     t9_start = errors;

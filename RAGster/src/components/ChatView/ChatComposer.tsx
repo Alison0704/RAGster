@@ -7,12 +7,13 @@ type ChatComposerProps = {
   value: string
   onChange: (value: string) => void
   onSubmit: () => void
+  busy: boolean
   steps: InstructionStep[]
   step: number | null
   onStepChange: (step: number) => void
 }
 
-function ChatComposer({ value, onChange, onSubmit, steps, step, onStepChange }: ChatComposerProps) {
+function ChatComposer({ value, onChange, onSubmit, busy, steps, step, onStepChange }: ChatComposerProps) {
   function handleSubmit(event: FormEvent) {
     event.preventDefault()
     onSubmit()
@@ -43,8 +44,8 @@ function ChatComposer({ value, onChange, onSubmit, steps, step, onStepChange }: 
             />
           </label>
         )}
-        <button className={styles.send} type="submit">
-          Transmit
+        <button className={styles.send} type="submit" disabled={busy}>
+          {busy ? 'Thinking…' : 'Transmit'}
           <span className={styles.arrow} aria-hidden="true">↗</span>
         </button>
       </div>

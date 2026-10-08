@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Background from './components/Background/Background'
 import ChatView from './components/ChatView/ChatView'
+import { useChat } from './components/ChatView/useChat'
 import CodeView from './components/CodeView/CodeView'
 import HowToView from './components/HowToView/HowToView'
 import InstructionsView from './components/InstructionsView/InstructionsView'
@@ -19,6 +20,7 @@ function App() {
   // The instruction step the student says they're working on; later sent with chat questions.
   const [step, setStep] = useState(instructionSteps[0]?.number ?? null)
   const checks = useCodeChecks()
+  const chat = useChat()
 
   return (
     <main className={styles.appShell}>
@@ -39,7 +41,16 @@ function App() {
               checks={checks}
             />
           )}
-          {activeTab === 'chat' && <ChatView steps={instructionSteps} step={step} onStepChange={setStep} />}
+          {activeTab === 'chat' && (
+            <ChatView
+              chat={chat}
+              code={code}
+              language={language}
+              steps={instructionSteps}
+              step={step}
+              onStepChange={setStep}
+            />
+          )}
         </Panel>
         <PageFooter />
       </section>
